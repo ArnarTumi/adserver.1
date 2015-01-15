@@ -1,4 +1,5 @@
 ActiveAdmin.register Banner do
+  permit_params :title, :utm_campaign, :utm_source, :utm_medium, :utm_content, :utm_term, :md5, :campaign_tracker, :recipients, :reference, :additional_ids
 
 
   # See permitted parameters documentation:
