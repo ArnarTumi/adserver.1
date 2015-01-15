@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :companies
+
   resources :campaigns
 
   resources :banners
