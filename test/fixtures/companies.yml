@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ssn: MyString
+  name: MyString
+  advertiser: false
+
+two:
+  ssn: MyString
+  name: MyString
+  advertiser: false
