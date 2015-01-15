@@ -1,6 +1,5 @@
-<h1>Editing banner</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @banner %> |
-<%= link_to 'Back', banners_path %>
+<%- model_class = Banner -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Banner %></h1>
+</div>
+<%= render :partial => 'form' %>

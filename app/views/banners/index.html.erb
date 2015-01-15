@@ -1,28 +1,30 @@
-<h1>Listing banners</h1>
-
-<table>
+<%- model_class = Banner -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Banner %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Campaign</th>
-      <th>Title</th>
-      <th>Utm campaign</th>
-      <th>Utm source</th>
-      <th>Utm medium</th>
-      <th>Utm content</th>
-      <th>Utm term</th>
-      <th>Md5</th>
-      <th>Campaign tracker</th>
-      <th>Recipients</th>
-      <th>Reference</th>
-      <th>Additional ids</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:utm_campaign) %></th>
+      <th><%= model_class.human_attribute_name(:utm_source) %></th>
+      <th><%= model_class.human_attribute_name(:utm_medium) %></th>
+      <th><%= model_class.human_attribute_name(:utm_content) %></th>
+      <th><%= model_class.human_attribute_name(:utm_term) %></th>
+      <th><%= model_class.human_attribute_name(:md5) %></th>
+      <th><%= model_class.human_attribute_name(:campaign_tracker) %></th>
+      <th><%= model_class.human_attribute_name(:recipients) %></th>
+      <th><%= model_class.human_attribute_name(:reference) %></th>
+      <th><%= model_class.human_attribute_name(:additional_ids) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @banners.each do |banner| %>
       <tr>
-        <td><%= banner.campaign %></td>
+        <td><%= banner.id %></td>
         <td><%= banner.title %></td>
         <td><%= banner.utm_campaign %></td>
         <td><%= banner.utm_source %></td>
@@ -34,14 +36,21 @@
         <td><%= banner.recipients %></td>
         <td><%= banner.reference %></td>
         <td><%= banner.additional_ids %></td>
-        <td><%= link_to 'Show', banner %></td>
-        <td><%= link_to 'Edit', edit_banner_path(banner) %></td>
-        <td><%= link_to 'Destroy', banner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l banner.created_at, format: :long %></td>
+        <td>
+          <%= link_to banner_path(banner), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to banner_path(banner), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Banner', new_banner_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_banner_path,
+            :class => 'btn btn-primary' %>

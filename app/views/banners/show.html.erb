@@ -1,64 +1,44 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Banner -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Banner %></h1>
+</div>
 
-<p>
-  <strong>Campaign:</strong>
-  <%= @banner.campaign %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:title) %></dt>
+      <dd><pre class="prettyprint"><%= @banner.title %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:utm_campaign) %></dt>
+      <dd><pre class="prettyprint"><%= @banner.utm_campaign %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:utm_source) %></dt>
+      <dd><pre class="prettyprint"><%= @banner.utm_source %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:utm_medium) %></dt>
+      <dd><pre class="prettyprint"><%= @banner.utm_medium %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:utm_content) %></dt>
+      <dd><pre class="prettyprint"><%= @banner.utm_content %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:utm_term) %></dt>
+      <dd><pre class="prettyprint"><%= @banner.utm_term %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:md5) %></dt>
+      <dd><pre class="prettyprint"><%= @banner.md5 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:campaign_tracker) %></dt>
+      <dd><pre class="prettyprint"><%= @banner.campaign_tracker %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:recipients) %></dt>
+      <dd><pre class="prettyprint"><%= @banner.recipients %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:reference) %></dt>
+      <dd><pre class="prettyprint"><%= @banner.reference %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:additional_ids) %></dt>
+      <dd><pre class="prettyprint"><%= @banner.additional_ids %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @banner.title %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              banners_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_banner_path(@banner), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              banner_path(@banner),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Utm campaign:</strong>
-  <%= @banner.utm_campaign %>
-</p>
-
-<p>
-  <strong>Utm source:</strong>
-  <%= @banner.utm_source %>
-</p>
-
-<p>
-  <strong>Utm medium:</strong>
-  <%= @banner.utm_medium %>
-</p>
-
-<p>
-  <strong>Utm content:</strong>
-  <%= @banner.utm_content %>
-</p>
-
-<p>
-  <strong>Utm term:</strong>
-  <%= @banner.utm_term %>
-</p>
-
-<p>
-  <strong>Md5:</strong>
-  <%= @banner.md5 %>
-</p>
-
-<p>
-  <strong>Campaign tracker:</strong>
-  <%= @banner.campaign_tracker %>
-</p>
-
-<p>
-  <strong>Recipients:</strong>
-  <%= @banner.recipients %>
-</p>
-
-<p>
-  <strong>Reference:</strong>
-  <%= @banner.reference %>
-</p>
-
-<p>
-  <strong>Additional ids:</strong>
-  <%= @banner.additional_ids %>
-</p>
-
-<%= link_to 'Edit', edit_banner_path(@banner) %> |
-<%= link_to 'Back', banners_path %>
