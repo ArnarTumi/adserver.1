@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Campaign:</strong>
+  <%= @banner.campaign %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @banner.title %>
+</p>
+
+<p>
+  <strong>Utm campaign:</strong>
+  <%= @banner.utm_campaign %>
+</p>
+
+<p>
+  <strong>Utm source:</strong>
+  <%= @banner.utm_source %>
+</p>
+
+<p>
+  <strong>Utm medium:</strong>
+  <%= @banner.utm_medium %>
+</p>
+
+<p>
+  <strong>Utm content:</strong>
+  <%= @banner.utm_content %>
+</p>
+
+<p>
+  <strong>Utm term:</strong>
+  <%= @banner.utm_term %>
+</p>
+
+<p>
+  <strong>Md5:</strong>
+  <%= @banner.md5 %>
+</p>
+
+<p>
+  <strong>Campaign tracker:</strong>
+  <%= @banner.campaign_tracker %>
+</p>
+
+<p>
+  <strong>Recipients:</strong>
+  <%= @banner.recipients %>
+</p>
+
+<p>
+  <strong>Reference:</strong>
+  <%= @banner.reference %>
+</p>
+
+<p>
+  <strong>Additional ids:</strong>
+  <%= @banner.additional_ids %>
+</p>
+
+<%= link_to 'Edit', edit_banner_path(@banner) %> |
+<%= link_to 'Back', banners_path %>

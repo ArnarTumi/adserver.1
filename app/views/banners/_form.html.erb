@@ -1,0 +1,65 @@
+<%= form_for(@banner) do |f| %>
+  <% if @banner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@banner.errors.count, "error") %> prohibited this banner from being saved:</h2>
+
+      <ul>
+      <% @banner.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :campaign_id %><br>
+    <%= f.text_field :campaign_id %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :utm_campaign %><br>
+    <%= f.text_field :utm_campaign %>
+  </div>
+  <div class="field">
+    <%= f.label :utm_source %><br>
+    <%= f.text_field :utm_source %>
+  </div>
+  <div class="field">
+    <%= f.label :utm_medium %><br>
+    <%= f.text_field :utm_medium %>
+  </div>
+  <div class="field">
+    <%= f.label :utm_content %><br>
+    <%= f.text_field :utm_content %>
+  </div>
+  <div class="field">
+    <%= f.label :utm_term %><br>
+    <%= f.text_field :utm_term %>
+  </div>
+  <div class="field">
+    <%= f.label :md5 %><br>
+    <%= f.text_field :md5 %>
+  </div>
+  <div class="field">
+    <%= f.label :campaign_tracker %><br>
+    <%= f.text_field :campaign_tracker %>
+  </div>
+  <div class="field">
+    <%= f.label :recipients %><br>
+    <%= f.text_field :recipients %>
+  </div>
+  <div class="field">
+    <%= f.label :reference %><br>
+    <%= f.text_field :reference %>
+  </div>
+  <div class="field">
+    <%= f.label :additional_ids %><br>
+    <%= f.text_field :additional_ids %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
