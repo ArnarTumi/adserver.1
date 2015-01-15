@@ -1,4 +1,5 @@
 ActiveAdmin.register Company do
+  permit_params :ssn, :name, :advertiser
 
 
   # See permitted parameters documentation:
